@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login / Sign up - Ticketing System</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="login-header">Login / Sign up</div>
+        <form class="login-form" onsubmit="return handleLogin(event)">
+            <input type="text" placeholder="Company Name / Tin No." required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const inputs = document.querySelectorAll(".login-form input");
+            const company = inputs[0].value.trim();
+            const password = inputs[1].value;
+
+            if (!company || !password) {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
+            // Placeholder logic
+            alert(`Logging in as: ${company}`);
+            return true;
+
+            // window.location.href = "home.html";
+            // return false;
+        }
+    </script>
+</body>
+
+</html>

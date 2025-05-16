@@ -1,0 +1,46 @@
+/* --- Package Page Styles --- */
+
+.package-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.package-box {
+    width: 120px;
+    height: 220px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
+
+.package-box.orange {
+    background-color: #ff944d;
+}
+
+.package-box.gold {
+    background-color: #ffbb33;
+}
+
+.package-box.yellow {
+    background-color: #ffdd55;
+    color: #333;
+}
+
+.remain-ticket {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f7f7f7;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #333;
+}
