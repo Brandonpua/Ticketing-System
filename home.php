@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ticketing System - Home</title>
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="home.php" />
     <link rel="stylesheet" href="layout.css" />
 </head>
 
@@ -14,10 +14,10 @@
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <a href="home.html" id="home" class="sidebar-btn">Home</a>
-            <a href="package.html" id="package" class="sidebar-btn">Package</a>
-            <a href="payment.html" id="payment" class="sidebar-btn">Payment</a>
-            <a href="about.html" id="about" class="sidebar-btn">About us</a>
+            <a href="home.php" id="home" class="sidebar-btn">Home</a>
+            <a href="package.php" id="package" class="sidebar-btn">Package</a>
+            <a href="payment.php" id="payment" class="sidebar-btn">Payment</a>
+            <a href="about.php" id="about" class="sidebar-btn">About us</a>
         </div>
 
         <!-- Main Content -->
