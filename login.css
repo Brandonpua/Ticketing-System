@@ -37,9 +37,13 @@ body {
     border: none;
     border-radius: 25px;
     background-color: #eaeaea;
-    color: #777;
+    color: #222;
     text-align: center;
     font-size: 14px;
+}
+
+.login-form input::placeholder {
+    color: #aaa;
 }
 
 .login-form button {
