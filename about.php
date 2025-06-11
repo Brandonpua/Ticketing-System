@@ -1,3 +1,10 @@
+<?php
+session_start();
+include 'db.php';
+include 'functions.php';
+
+checkLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +22,14 @@
             <a href="home.php" id="home" class="sidebar-btn">Home</a>
             <a href="package.php" id="package" class="sidebar-btn">Package</a>
             <a href="payment.php" id="payment" class="sidebar-btn">Payment</a>
-            <a href="about.php" id="about" class="sidebar-btn">About us</a>
+            <a href="about.php" id="about" class="sidebar-btn active">About us</a>
         </div>
 
         <!-- Main Content -->
         <div class="main">
+            <div class="top-bar">
+                <div class="settings-icon">&#9881;</div>
+            </div>
             <h1>About Us</h1>
             <p>Details about us will be here.</p>
         </div>
