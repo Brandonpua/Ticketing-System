@@ -1,0 +1,272 @@
+/* Edit Modal styles */
+.edit-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    width: 90%;
+    max-width: 500px;
+}
+
+.edit-modal h3 {
+    color: #0047AB;
+    margin-bottom: 15px;
+}
+
+.edit-form .form-group {
+    margin-bottom: 15px;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.edit-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.edit-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.edit-form-buttons button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.save-btn {
+    background-color: #0047AB;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Ticket Info Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width: 90%;
+    max-width: 550px;
+    max-height: 90vh;
+    border: 1px solid #e1e5eb;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    padding: 20px 25px;
+    border-bottom: 2px solid #0047AB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    flex-shrink: 0;
+    border-radius: 15px 15px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0047AB;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-content {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    background: white;
+    border-radius: 0 0 15px 15px;
+    min-height: 0;
+}
+
+.modal-inner-content {
+    height: 100%;
+    padding: 25px;
+    padding-right: 33px;
+    overflow-y: auto;
+    max-height: calc(90vh - 80px);
+}
+
+.ticket-detail {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border-left: 4px solid #0047AB;
+    overflow-wrap: break-word;
+}
+
+.ticket-detail:last-child {
+    margin-bottom: 5px;
+}
+
+.ticket-detail strong {
+    color: #0047AB;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.ticket-detail span,
+#modalDescription {
+    color: #2c3e50;
+    font-size: 16px;
+    line-height: 1.5;
+    display: block;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+#modalDescription {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e1e5eb;
+    margin-top: 10px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    max-height: none;
+}
+
+/* Custom scrollbar for modal inner content */
+.modal-inner-content::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f1f1f1;
+}
+
+.modal-inner-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal-inner-content::-webkit-scrollbar-thumb {
+    background: #0047AB;
+    border-radius: 4px;
+}
+
+.modal-inner-content::-webkit-scrollbar-thumb:hover {
+    background: #003380;
+}
+
+.close-button {
+    background: #0047AB;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background: #003380;
+    transform: rotate(90deg);
+}
+
+/* Custom scrollbar styling */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #0047AB;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #003380;
+}
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    animation: modalFadeIn 0.3s ease forwards;
+}
+
+/* Ensure modal is on top of all other content */
+body.modal-open {
+    overflow: hidden;
+}
