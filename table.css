@@ -1,0 +1,156 @@
+/* Table container and styles */
+.ticket-table-container {
+    flex: 1;
+    overflow: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-table th,
+.ticket-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.ticket-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* Column widths */
+.ticket-table th:nth-child(1),
+.ticket-table td:nth-child(1) {
+    width: 120px;
+}
+
+.ticket-table th:nth-child(2),
+.ticket-table td:nth-child(2) {
+    width: 150px;
+}
+
+.ticket-table th:nth-child(3),
+.ticket-table td:nth-child(3) {
+    width: 180px;
+}
+
+.ticket-table th:nth-child(4),
+.ticket-table td:nth-child(4) {
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+/* Description cell styling */
+.description-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+/* Search inputs */
+.search-row input {
+    width: 95%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin: 2px;
+}
+
+/* Hover effect */
+.ticket-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+/* Sticky headers */
+.ticket-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.ticket-table thead tr:first-child th {
+    position: sticky;
+    top: 0;
+    background: #f5f5f5;
+    z-index: 11;
+}
+
+.ticket-table thead tr:nth-child(2) th {
+    position: sticky;
+    top: 37px;
+    background: #f5f5f5;
+    z-index: 11;
+}
+
+/* Sort button styles */
+.sort-header {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 20px;
+}
+
+.sort-header:hover {
+    background-color: #e9ecef;
+}
+
+.sort-header::before,
+.sort-header::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.sort-header::before {
+    top: 40%;
+    border-bottom: 5px solid #999;
+}
+
+.sort-header::after {
+    top: 55%;
+    border-top: 5px solid #999;
+}
+
+.sort-header.asc::before {
+    border-bottom-color: #0047AB;
+}
+
+.sort-header.desc::after {
+    border-top-color: #0047AB;
+}
+
+/* Edit button style */
+.edit-btn {
+    background-color: #0047AB;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    float: right;
+}
+
+.edit-btn:hover {
+    background-color: #003380;
+}
+
+.ticket-number-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
