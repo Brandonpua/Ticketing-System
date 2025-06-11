@@ -1,3 +1,10 @@
+<?php
+session_start();
+include 'db.php';
+include 'functions.php';
+
+checkLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +17,11 @@
 </head>
 
 <body>
-
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
             <a href="home.php" id="home" class="sidebar-btn">Home</a>
-            <a href="package.php" id="package" class="sidebar-btn">Package</a>
+            <a href="package.php" id="package" class="sidebar-btn active">Package</a>
             <a href="payment.php" id="payment" class="sidebar-btn">Payment</a>
             <a href="about.php" id="about" class="sidebar-btn">About us</a>
         </div>
