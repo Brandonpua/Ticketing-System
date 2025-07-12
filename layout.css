@@ -72,3 +72,59 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+    z-index: 1001;
+}
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: #0047AB;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .sidebar {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 220px;
+        height: 100vh;
+        background: #0047AB;
+        z-index: 1000;
+        flex-direction: column;
+        padding-top: 60px;
+        transition: left 0.3s;
+    }
+    .sidebar.open {
+        display: flex;
+    }
+    .main {
+        padding: 10px;
+    }
+    .top-bar {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 1002;
+        padding: 10px 0;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
