@@ -1,0 +1,253 @@
+/* Table container and styles for user view */
+.ticket-table-container {
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-table th,
+.ticket-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.ticket-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* Column widths - User */
+.ticket-table th:nth-child(1),
+.ticket-table td:nth-child(1) {
+    /* Ticket No. */
+    width: 60px;
+}
+
+.ticket-table th:nth-child(2),
+.ticket-table td:nth-child(2) {
+    /* Date */
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticket-table th:nth-child(3),
+.ticket-table td:nth-child(3) {
+    /* Company Name */
+    width: 120px;
+}
+
+.ticket-table th:nth-child(4),
+.ticket-table td:nth-child(4) {
+    /* Description */
+    width: 120px;
+}
+
+.ticket-table th:nth-child(5),
+.ticket-table td:nth-child(5) {
+    /* Status */
+    width: 90px;
+}
+
+.ticket-table th:nth-child(6),
+.ticket-table td:nth-child(6) {
+    /* Complexity */
+    width: 90px;
+}
+
+/* Description cell styling - show ellipsis for overflow */
+.description-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.ticket-table td.description-cell {
+    max-width: 120px;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Search inputs */
+.search-row input {
+    width: 95%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin: 2px;
+}
+
+/* Hover effect */
+.ticket-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+/* Sticky headers */
+.ticket-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.ticket-table thead tr:first-child th {
+    position: sticky;
+    top: 0;
+    background: #f5f5f5;
+    z-index: 11;
+}
+
+.ticket-table thead tr:nth-child(2) th {
+    position: sticky;
+    top: 37px;
+    background: #f5f5f5;
+    z-index: 11;
+}
+
+/* Sort button styles */
+.sort-header {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 20px;
+}
+
+.sort-header:hover {
+    background-color: #e9ecef;
+}
+
+.sort-header::before,
+.sort-header::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.sort-header::before {
+    top: 40%;
+    border-bottom: 5px solid #999;
+}
+
+.sort-header::after {
+    top: 55%;
+    border-top: 5px solid #999;
+}
+
+.sort-header.asc::before {
+    border-bottom-color: #0047AB;
+}
+
+.sort-header.desc::after {
+    border-top-color: #0047AB;
+}
+
+/* Edit button style */
+.edit-btn {
+    background-color: #0047AB;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    float: right;
+}
+
+.edit-btn:hover {
+    background-color: #003380;
+}
+
+.ticket-number-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+
+    .ticket-table th:nth-child(4),
+    .ticket-table td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .ticket-table,
+    .ticket-table thead,
+    .ticket-table tbody,
+    .ticket-table th,
+    .ticket-table td,
+    .ticket-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .ticket-table thead {
+        display: none;
+    }
+
+    .ticket-table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #eee;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px 0;
+    }
+
+    .ticket-table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        min-height: 40px;
+        font-size: 14px;
+        box-sizing: border-box;
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        white-space: normal !important;
+        word-break: break-word;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .ticket-table td:before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #0047AB;
+        font-size: 13px;
+        content: attr(data-label);
+    }
+
+    .description-cell {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        max-width: 100% !important;
+    }
+
+    .ticket-table-container {
+        width: 100% !important;
+        overflow-x: visible !important;
+    }
+}
