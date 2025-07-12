@@ -31,7 +31,11 @@ if ($ticket_id > 0) {
             'date_created' => $row['date_created'],
             'company_name' => $row['company_name'],
             'description' => $row['description'],
-            'from_who' => $row['from_who']
+            'from_who' => $row['from_who'],
+            'attachment' => $row['attachment'],
+            'status' => $row['status'],
+            'reply' => $row['reply'],
+            'complexity' => $row['complexity']
         ]);
     } else {
         http_response_code(403);
