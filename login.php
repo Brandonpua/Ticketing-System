@@ -56,6 +56,7 @@ $conn->close();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login / Sign up Ticketing System</title>
+    <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="login.css" />
 </head>
 
@@ -71,7 +72,7 @@ $conn->close();
             </div>
         <?php endif; ?>
 
-        <form class="login-form" method="POST" action="Login.php">
+        <form class="login-form" method="POST" action="login.php">
             <input type="text" name="identifier" placeholder="Company Name / Tin No." required />
             <input type="password" name="password" placeholder="Password" required />
             <button type="submit">Enter</button>
