@@ -1,10 +1,8 @@
 /* Table container and styles */
 .ticket-table-container {
-    flex: 1;
-    overflow: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: white;
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
 
 .ticket-table {
@@ -17,6 +15,8 @@
     padding: 8px;
     border: 1px solid #ccc;
     text-align: left;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .ticket-table th {
@@ -24,35 +24,51 @@
     font-weight: bold;
 }
 
-/* Column widths */
+/* Column widths - Desktop */
 .ticket-table th:nth-child(1),
 .ticket-table td:nth-child(1) {
-    width: 120px;
+    /* Ticket No. */
+    width: 80px;
 }
 
 .ticket-table th:nth-child(2),
 .ticket-table td:nth-child(2) {
-    width: 150px;
+    /* Date */
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .ticket-table th:nth-child(3),
 .ticket-table td:nth-child(3) {
-    width: 180px;
+    /* Company Name */
+    width: 160px;
 }
 
 .ticket-table th:nth-child(4),
 .ticket-table td:nth-child(4) {
-    width: auto;
-    min-width: 200px;
-    max-width: 300px;
+    /* Description */
+    width: 180px;
 }
 
-/* Description cell styling */
+.ticket-table th:nth-child(5),
+.ticket-table td:nth-child(5) {
+    /* Status */
+    width: 100px;
+}
+
+.ticket-table th:nth-child(6),
+.ticket-table td:nth-child(6) {
+    /* Complexity */
+    width: 110px;
+}
+
+/* Description cell styling - allow wrap, no ellipsis */
 .description-cell {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 400px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: 100%;
     cursor: pointer;
 }
 
@@ -153,4 +169,77 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 900px) {
+
+    .ticket-table th:nth-child(4),
+    .ticket-table td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .ticket-table,
+    .ticket-table thead,
+    .ticket-table tbody,
+    .ticket-table th,
+    .ticket-table td,
+    .ticket-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .ticket-table thead {
+        display: none;
+    }
+
+    .ticket-table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #eee;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px 0;
+    }
+
+    .ticket-table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        min-height: 40px;
+        font-size: 14px;
+        box-sizing: border-box;
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        white-space: normal !important;
+        word-break: break-word;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .ticket-table td:before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #0047AB;
+        font-size: 13px;
+        content: attr(data-label);
+    }
+
+    .description-cell {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        max-width: 100% !important;
+    }
+
+    .ticket-table-container {
+        width: 100% !important;
+        overflow-x: visible !important;
+    }
 }
