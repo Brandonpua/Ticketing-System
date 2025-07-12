@@ -11,7 +11,9 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1001;
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .edit-modal h3 {
@@ -36,6 +38,14 @@
 .edit-form textarea {
     min-height: 100px;
     resize: vertical;
+}
+
+.edit-form textarea[name="reply"] {
+    min-height: 120px;
+    background-color: #f8f9fa;
+    border: 2px solid #0047AB;
+    font-family: inherit;
+    font-size: 16px;
 }
 
 .edit-form-buttons {
@@ -145,7 +155,10 @@
 }
 
 .ticket-detail span,
-#modalDescription {
+#modalDescription,
+#modalComplexity,
+#modalReply,
+#modalStatus {
     color: #2c3e50;
     font-size: 16px;
     line-height: 1.5;
@@ -269,4 +282,14 @@
 /* Ensure modal is on top of all other content */
 body.modal-open {
     overflow: hidden;
+}
+
+#adminReplyForm {
+    z-index: 2000 !important;
+    position: relative;
+    background: #fff !important;
+    border: 2px solid #0047AB !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
